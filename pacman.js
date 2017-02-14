@@ -79,11 +79,19 @@ function eatDot() {
   score += 10;
 }
 
+function checkEdible (ghost) {
+    if (ghost.edible === true)
+      return 'edible';
+     else
+      return 'inedible';
+}
+
 function printGhosts() {
   for (var i = 0; i<ghosts.length; i ++) {
-    console.log("\(" + (ghosts[i].menu_option) + "\)" + (ghosts[i].name));
+    console.log("\(" + (ghosts[i].menu_option) + "\)" + (ghosts[i].name) + "\(" +  checkEdible(i)    + "\)");
   };
 }
+
 
 function eatGhosts (ghost){
   if (ghost.edible === false){
