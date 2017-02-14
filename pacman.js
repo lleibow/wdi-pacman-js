@@ -38,6 +38,8 @@ var clyde = {
 
 // replace this comment with your four ghosts setup as objects
 
+var ghosts = [inky, blinky, pinky, clyde];
+
 
 // Draw the screen functionality
 function drawScreen() {
@@ -60,6 +62,7 @@ function displayStats() {
 function displayMenu() {
   console.log('\n\nSelect Option:\n');  // each \n creates a new line
   console.log('(d) Eat Dot');
+  eatGhosts();
   console.log('(q) Quit');
 }
 
@@ -74,6 +77,14 @@ function eatDot() {
   console.log('\nChomp!');
   score += 10;
 }
+
+function eatGhosts() {
+  for (var i = 0; i<ghosts.length; i ++) {
+    console.log("\(" + (ghosts[i].menu_option) + "\)" + (ghosts[i].name));
+  };
+}
+
+
 
 
 // Process Player's Input
