@@ -89,7 +89,9 @@ function eatGhosts (ghost){
     lives -= 1;
     console.log("Oh shit, " + ghost.name + '' + ghost.colour + ''+ "fucking ate you!");
   }
-
+  if (lives === 0) {
+    process.exit();
+  }
 }
 
 
@@ -134,4 +136,5 @@ process.on('exit', function() {
   console.log('\n\nGame Over!\n');
 });
 
+eatGhosts(inky);
 eatGhosts(inky);
