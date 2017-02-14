@@ -84,7 +84,13 @@ function printGhosts() {
   };
 }
 
+function eatGhosts (ghost){
+  if (ghost.edible === false){
+    lives -= 1;
+    console.log("Oh shit, " + ghost.name + '' + ghost.colour + ''+ "fucking ate you!");
+  }
 
+}
 
 
 // Process Player's Input
@@ -127,3 +133,5 @@ stdin.on('data', function(key) {
 process.on('exit', function() {
   console.log('\n\nGame Over!\n');
 });
+
+eatGhosts(inky);
