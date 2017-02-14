@@ -88,7 +88,12 @@ function printGhosts() {
 function eatGhosts (ghost){
   if (ghost.edible === false){
     lives -= 1;
-    console.log("Oh shit, " + ghost.name + '' + ghost.colour + ''+ "fucking ate you!");
+    console.log("Oh shit, " + ghost.name + '   ' + ghost.colour + '   '+ "fucking ate you!");
+  }
+  else if (ghost.edible === true){
+    console.log("Hey sister! You just ate " + '   ' + ghost.name + '. This ghost is  ' + ghost.colour + '.' );
+    score += 200;
+    ghost.edible = false;
   }
   if (lives === 0) {
     process.exit();
@@ -148,3 +153,5 @@ stdin.on('data', function(key) {
 process.on('exit', function() {
   console.log('\n\nGame Over!\n');
 });
+
+eatGhosts(inky);
