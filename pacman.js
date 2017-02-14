@@ -95,6 +95,15 @@ function eatGhosts (ghost){
   }
 }
 
+function eatPowerPellet() {
+  score += 50;
+      [ghosts].forEach (function (item){
+        item.edible = true;
+        console.log("    All of the ghosts are now edible!   ");
+      })
+  powerPellets -= 1;
+}
+
 
 // Process Player's Input
 function processInput(key) {
@@ -105,6 +114,9 @@ function processInput(key) {
       break;
     case 'd':
       eatDot();
+      break;
+    case 'p':
+      eatPowerPellet();
       break;
     default:
       console.log('\nInvalid Command!');
